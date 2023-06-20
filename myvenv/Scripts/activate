@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Laboratorio\Desktop\PGY3121-INSTITUTO\myvenv"
+VIRTUAL_ENV="C:\Users\hp\OneDrive\Escritorio\PGY3121-INSTITUTO\myvenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

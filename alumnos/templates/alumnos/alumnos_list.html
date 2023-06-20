@@ -12,6 +12,8 @@
 <body>
 
         <h1>Editar Datos De Alumnos</h1><br>
+        <br>
+
 
         <button type="button">
             <a href="{% url 'alumnosAdd' %}">Agregar </a>
@@ -23,6 +25,7 @@
             {% endif %}
         </div>
 
+        
         
         <table>
             {% if alumnos %}
@@ -36,8 +39,8 @@
                         <td> {{ x.rut }}
                         <td> {{ x.nombre }}
                         <td> {{ x.apellido_paterno }}
-                        <td> <a href="{% url 'alumnos_del' pk= x.rut %}">Eliminar</a></td>
-                        <td> <a href="{% url 'alumnos_findEdit' pk= x.rut %}">Modificar</a></td>
+                        <td> <a href="{% url 'alumnos_del' pk=x.rut %}">Eliminar</a></td>
+                        <td> <a href="{% url 'alumnos_findEdit' pk=x.rut %}">Modificar</a></td>
                     
                     </tr>
                 {% endfor %}
@@ -47,12 +50,7 @@
     <script>
         $(document).ready(function(){
             $("#idMensajes").delay(2000).fadeOut("slow");
-
         });
     </script>
-
-        
-
-
 </body>
 </html>
