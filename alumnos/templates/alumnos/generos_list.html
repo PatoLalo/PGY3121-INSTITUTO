@@ -34,9 +34,7 @@
                 <th>Modificar</th>
                 {% for x in generos %}
                     <tr>
-                        <td> {{ x.rut }}
-                        <td> {{ x.nombre }}
-                        <td> {{ x.apellido_paterno }}
+                        <td> {{ x.genero }}
                         <td> <a href="{% url 'generos_del' pk=x.id_genero %}">Eliminar</a></td>
                         <td> <a href="{% url 'generos_edit' pk=x.id_genero%}">Modificar</a></td>
                     

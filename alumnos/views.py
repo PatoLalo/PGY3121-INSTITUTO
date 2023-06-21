@@ -28,6 +28,12 @@ def crud (request):
     context={'alumnos' :alumnos}
     return render(request, 'alumnos/alumnos_list.html', context)
 
+#posible solición de generos_edit
+def form(request):
+    form= GeneroForm
+    context={'form': form}
+    return render(request, 'alumnos/generos_list.html', context)
+
 
 def alumnosAdd (request):
     if request.method != "POST":
@@ -202,17 +208,19 @@ def generos_edit(request, pk):
                 print(mensaje)
                 context = {'genero': genero, 'form': form, 'mensaje': mensaje}
                 return render(request,'alumnos/generos_edit.html', context)
-        else:
-            #no es un post
-            print("edit, no es un POST")
-            form =GeneroForm(instance=genero)
-            mensaje=""
-            context ={'genero': genero, 'form': form, 'mensaje': mensaje}
-            return render(request,'alumnos/generos_edit.html', context)
+            else:
+                #no es un post
+                print("edit, no es un POST")
+                form =GeneroForm(instance=genero)
+                mensaje=""
+                context ={'genero': genero, 'form': form, 'mensaje': mensaje, "generos": generos}
+                return render(request,'alumnos/generos_edit.html', context)
     except:
         print("Error, id no existe...")
         generos=Genero.objects.all()
         mensaje="Error, id no existe"
         context={'mensaje':mensaje,'generos':generos}
         return render(request, 'alumnos/generos_list.html', context)
-            
+ 
+          
+    
